@@ -1,0 +1,10 @@
+/admin/node_modules
+node_modules/
+/admin/dist/
+
+/fe/node_modules
+/fe/build
+
+/be/node_modules
+/be/build
+/be/.env

@@ -1,0 +1,217 @@
+.van-radio-group--horizontal {
+    display: flex;
+    flex-wrap: wrap
+}
+
+:root,:host {
+    --van-radio-size: 5.33333rem;
+    --van-radio-dot-size: 2.13333rem;
+    --van-radio-border-color: var(--van-gray-5);
+    --van-radio-duration: var(--van-duration-fast);
+    --van-radio-label-margin: var(--van-padding-xs);
+    --van-radio-label-color: var(--van-text-color);
+    --van-radio-checked-icon-color: var(--van-primary-color);
+    --van-radio-disabled-icon-color: var(--van-gray-5);
+    --van-radio-disabled-label-color: var(--van-text-color-3);
+    --van-radio-disabled-background: var(--van-border-color)
+}
+
+.van-radio {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none
+}
+
+.van-radio--disabled {
+    cursor: not-allowed
+}
+
+.van-radio--label-disabled {
+    cursor: default
+}
+
+.van-radio--horizontal {
+    margin-right: var(--van-padding-sm)
+}
+
+.van-radio__icon {
+    flex: none;
+    height: 1em;
+    font-size: var(--van-radio-size);
+    line-height: 1em;
+    cursor: pointer
+}
+
+.van-radio__icon .van-icon {
+    display: block;
+    box-sizing: border-box;
+    width: 1.25em;
+    height: 1.25em;
+    color: transparent;
+    font-size: .8em;
+    line-height: 1.25;
+    text-align: center;
+    border: 1rem solid var(--van-radio-border-color);
+    transition-duration: var(--van-radio-duration);
+    transition-property: color,border-color,background-color
+}
+
+.van-radio__icon--round .van-icon {
+    border-radius: 100%
+}
+
+.van-radio__icon--dot {
+    position: relative;
+    border-radius: 100%;
+    box-sizing: border-box;
+    width: var(--van-radio-size);
+    height: var(--van-radio-size);
+    border: 1rem solid var(--van-radio-border-color);
+    transition-duration: var(--van-radio-duration);
+    transition-property: border-color
+}
+
+.van-radio__icon--dot__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 100%;
+    height: calc(100% - var(--van-radio-dot-size));
+    width: calc(100% - var(--van-radio-dot-size));
+    transition-duration: var(--van-radio-duration);
+    transition-property: background-color
+}
+
+.van-radio__icon--checked .van-icon {
+    color: var(--van-white);
+    background-color: var(--van-radio-checked-icon-color);
+    border-color: var(--van-radio-checked-icon-color)
+}
+
+.van-radio__icon--checked.van-radio__icon--dot {
+    border-color: var(--van-radio-checked-icon-color)
+}
+
+.van-radio__icon--checked.van-radio__icon--dot .van-radio__icon--dot__icon {
+    background: var(--van-radio-checked-icon-color)
+}
+
+.van-radio__icon--disabled {
+    cursor: not-allowed
+}
+
+.van-radio__icon--disabled .van-icon {
+    background-color: var(--van-radio-disabled-background);
+    border-color: var(--van-radio-disabled-icon-color)
+}
+
+.van-radio__icon--disabled.van-radio__icon--checked .van-icon {
+    color: var(--van-radio-disabled-icon-color)
+}
+
+.van-radio__label {
+    margin-left: var(--van-radio-label-margin);
+    color: var(--van-radio-label-color);
+    line-height: var(--van-radio-size)
+}
+
+.van-radio__label--left {
+    margin: 0 var(--van-radio-label-margin) 0 0
+}
+
+.van-radio__label--disabled {
+    color: var(--van-radio-disabled-label-color)
+}
+
+.bank-page[data-v-1ad66f02] {
+    min-height: 100%;
+    background: var(--bg-color);
+}
+
+.bank-list[data-v-1ad66f02] {
+    padding: 4.26667rem
+}
+
+.bank-list .bank-item[data-v-1ad66f02] {
+    background: #fff;
+    border-radius: 3.2rem;
+    padding: 4.26667rem;
+    margin-bottom: 3.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 .83333rem 3.2rem #64656614
+}
+
+.bank-list .bank-item .bank-info[data-v-1ad66f02] {
+    flex: 1;
+    min-width: 0
+}
+
+.bank-list .bank-item .bank-info .info-row[data-v-1ad66f02] {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.13333rem
+}
+
+.bank-list .bank-item .bank-info .info-row[data-v-1ad66f02]:last-child {
+    margin-bottom: 0
+}
+
+.bank-list .bank-item .bank-info .info-row .label[data-v-1ad66f02] {
+    width: 21.33333rem;
+    font-size: 3.83333rem;
+    color: var(--text-color-light)
+}
+
+.bank-list .bank-item .bank-info .info-row .value[data-v-1ad66f02] {
+    flex: 1;
+    font-size: 3.83333rem;
+    color: var(--text-color);
+    font-weight: 500
+}
+
+.bank-list .bank-item .bank-actions[data-v-1ad66f02] {
+    margin-left: 4.26667rem
+}
+
+.add-bank-form[data-v-1ad66f02] {
+    background: #fff;
+    border-radius: 3.2rem;
+    margin: 4.26667rem;
+    padding: 4.26667rem;
+    box-shadow: 0 .83333rem 3.2rem #64656614
+}
+
+.add-bank-form .form-title[data-v-1ad66f02] {
+    font-size: 4.26667rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 4.26667rem
+}
+
+.add-bank-form[data-v-1ad66f02] .van-field {
+    padding: 4.26667rem 0
+}
+
+.add-bank-form[data-v-1ad66f02] .van-radio-group {
+    width: 100%;
+    display: flex;
+    gap: 4.26667rem
+}
+
+.add-bank-form .submit-btn[data-v-1ad66f02] {
+    margin-top: 6.4rem
+}
+
+.add-bank-form .submit-btn[data-v-1ad66f02] .van-button {
+    height: 11.83333rem;
+    font-size: 4.26667rem;
+    font-weight: 500;
+    background: var(--primary-gradient);
+    border: none
+}

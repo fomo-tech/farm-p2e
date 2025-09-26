@@ -1,0 +1,438 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "PixeloidSans";
+  src: url("../assets/fonts/PixeloidSans.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PixeloidSans";
+  src: url("../assets/fonts/PixeloidSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PixeloidMono";
+  src: url("../assets/fonts/PixeloidMono.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* body {
+    font-family:"Press Start 2P", system-ui;
+    font-style: normal;
+} */
+:root {
+  --color-start: #d2998f; /* sáng nhạt */
+  --color-26: #ac6e67;
+  --color-45: #8a4f48;
+  --color-60: #673832;
+  --color-end: #4a2925; /* tối nhất */
+  --primary-color: var(--color-end);
+  --primary-gradient: linear-gradient(
+    45deg,
+    var(--color-end) 0%,
+    var(--color-60) 40%,
+    var(--color-45) 55%,
+    var(--color-26) 74%,
+    var(--color-start) 100%
+  );
+  --text-color: #333;
+  --text-color-light: #999;
+  --border-color: #eee;
+  --bg-color: #f7f8fa;
+  --white: #fff;
+  --van-black: #000;
+  --van-white: #fff;
+  --van-gray-1: #f7f8fa;
+  --van-gray-2: #f2f3f5;
+  --van-gray-3: #ebedf0;
+  --van-gray-4: #dcdee0;
+  --van-gray-5: #c8c9cc;
+  --van-gray-6: #969799;
+  --van-gray-7: #646566;
+  --van-gray-8: #323233;
+  --van-red: #ee0a24;
+  --van-blue: #1989fa;
+  --van-orange: #ff976a;
+  --van-orange-dark: #ed6a0c;
+  --van-orange-light: #fffbe8;
+  --van-green: #07c160;
+  --van-gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
+  --van-gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);
+  --van-primary-color: var(--van-blue);
+  --van-success-color: var(--van-green);
+  --van-danger-color: var(--van-red);
+  --van-warning-color: var(--van-orange);
+  --van-text-color: var(--van-gray-8);
+  --van-text-color-2: var(--van-gray-6);
+  --van-text-color-3: var(--van-gray-5);
+  --van-active-color: var(--van-gray-2);
+  --van-active-opacity: 0.6;
+  --van-disabled-opacity: 0.5;
+  --van-background: var(--van-gray-1);
+  --van-background-2: var(--van-white);
+  --van-background-3: var(--van-white);
+  --van-padding-base: 1.06667rem;
+  --van-padding-xs: 2.13333rem;
+  --van-padding-sm: 3.2rem;
+  --van-padding-md: 4.26667rem;
+  --van-padding-lg: 6.4rem;
+  --van-padding-xl: 8.83333rem;
+  --van-font-bold: 600;
+  --van-font-size-xs: 2.66667rem;
+  --van-font-size-sm: 3.2rem;
+  --van-font-size-md: 3.83333rem;
+  --van-font-size-lg: 4.26667rem;
+  --van-line-height-xs: 3.83333rem;
+  --van-line-height-sm: 4.8rem;
+  --van-line-height-md: 5.33333rem;
+  --van-line-height-lg: 5.86667rem;
+  --van-base-font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Segoe UI, Arial, Roboto,
+    "PingFang SC", "miui", "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+  --van-price-font: avenir-heavy, "PingFang SC", helvetica neue, arial, sans-serif;
+  --van-duration-base: 0.3s;
+  --van-duration-fast: 0.2s;
+  --van-ease-out: ease-out;
+  --van-ease-in: ease-in;
+  --van-border-color: var(--van-gray-3);
+  --van-border-width: 1rem;
+  --van-radius-sm: 0.83333rem;
+  --van-radius-md: 1.06667rem;
+  --van-radius-lg: 2.13333rem;
+  --van-radius-max: 266.4rem;
+  --van-field-label-width: 6.2em;
+  --van-field-label-color: var(--van-text-color);
+  --van-field-label-margin-right: var(--van-padding-sm);
+  --van-field-input-text-color: var(--van-text-color);
+  --van-field-input-error-text-color: var(--van-danger-color);
+  --van-field-input-disabled-text-color: var(--van-text-color-3);
+  --van-field-placeholder-text-color: var(--van-text-color-3);
+  --van-field-icon-size: 4.8rem;
+  --van-field-clear-icon-size: 4.8rem;
+  --van-field-clear-icon-color: var(--van-gray-5);
+  --van-field-right-icon-color: var(--van-gray-6);
+  --van-field-error-message-color: var(--van-danger-color);
+  --van-field-error-message-font-size: 3.2rem;
+  --van-field-text-area-min-height: 16rem;
+  --van-field-word-limit-color: var(--van-gray-7);
+  --van-field-word-limit-font-size: var(--van-font-size-sm);
+  --van-field-word-limit-line-height: 4.26667rem;
+  --van-field-disabled-text-color: var(--van-text-color-3);
+  --van-field-required-mark-color: var(--van-red);
+  --van-picker-confirm-action-color: var(var(--color-start));
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.flip-hourglass {
+  animation: flip 2s infinite;
+  transform-style: preserve-3d;
+}
+
+@import url("./layout.css");
+@import url("./auth.css");
+@import url("./activity.css");
+@import url("./profile.css");
+@import url("./home.css");
+@import url("./field.css");
+@import url("./order.css");
+@import url("./record-list.css");
+@import url("./checkin.css");
+@import url("./deposit-page.css");
+@import url("./withdraw.css");
+@import url("./add-method.css");
+@import url("./invite.css");
+@import url("./vip-page.css");
+@import url("./vip-reward.css");
+@import url("./team-page.css");
+@import url("./security-page.css");
+@import url("./lucky-draw.css");
+@import url("./treasure.css");
+@import url("./custom-antd.css");
+@import url("./box-chat.css");
+
+body {
+  font-size: 3rem;
+  font-family: "PixeloidSans", sans-serif !important;
+}
+
+#crisp-chatbox .cc-1m2mf {
+  display: none !important;
+}
+.no-scollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.modal-confirm-buy .buy-btn {
+  height: 9.6rem;
+  border: none;
+  font-weight: 500;
+  background: var(--primary-gradient);
+  padding: 0 10rem;
+  border-radius: 10rem;
+  min-width: 30rem;
+  color: #eee;
+}
+.van-picker__confirm {
+  color: var(--color-60);
+}
+
+.animation-bounceCard {
+  animation: bounceCard 1.7s ease-in-out infinite;
+}
+
+.tab-bar {
+  background-color: #f5f1f5;
+  padding: 20px;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  height: 10px;
+  left: 0;
+  right: 0;
+  height: 70px;
+  justify-content: space-between;
+  border-radius: 30px 30px 0 0;
+  border: 1px solid #aaaa;
+}
+.tab-bar .tab-indicator {
+  position: absolute;
+  background-color: #fe0032;
+  width: 100px;
+  height: 65px;
+  border-radius: 0 0 50px 50px;
+  z-index: 1;
+  transform: translateX(155px);
+  transition: transform 0.3s ease-out;
+}
+.tab-bar .tab-indicator .tab-indicator-left,
+.tab-bar .tab-indicator .tab-indicator-right {
+  background-color: #fe0032;
+  height: 25px;
+  width: 25px;
+  position: absolute;
+}
+.tab-bar .tab-indicator .tab-indicator-left:after,
+.tab-bar .tab-indicator .tab-indicator-right:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #fefcfe;
+  display: block;
+}
+.tab-bar .tab-indicator .tab-indicator-left {
+  left: -25px;
+}
+.tab-bar .tab-indicator .tab-indicator-left:after {
+  border-radius: 0 25px 0 0;
+}
+.tab-bar .tab-indicator .tab-indicator-right {
+  right: -25px;
+}
+.tab-bar .tab-indicator .tab-indicator-right:after {
+  border-radius: 25px 0 0 0;
+}
+.tab-bar .tab-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 80px;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  outline: none !important;
+}
+.tab-bar .tab-item .tab-item-inner {
+  position: absolute;
+  display: flex;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.1s ease-out,
+    box-shadow 0.2s ease-out;
+}
+.tab-bar .tab-item .tab-item-inner svg {
+  width: 40%;
+  transition: fill 0.2s ease-out 0.2s;
+}
+.tab-bar .tab-item .tab-item-inner svg * {
+  stroke: #bbb;
+}
+.tab-bar .tab-item.active .tab-item-inner {
+  transform: translateY(-20px);
+  transition-delay: 0.1s;
+  background-color: #fefcfe;
+  z-index: 2;
+  box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.animate-floatUp {
+  animation: floatUp 1.5s ease-out forwards;
+  pointer-events: none;
+}
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
+
+@media (min-width: 478px) {
+  body {
+    background: rgb(25, 34, 31);
+  }
+  .tab-bar {
+    max-width: 90rem;
+    margin: auto;
+  }
+}
+
+.lixi-event .ant-modal-content {
+  background-color: unset;
+  box-shadow: none;
+  border-radius: 0;
+  box-sizing: content-box;
+  border: none;
+}
+.lixi-event-animation {
+  animation: shake 0.8s infinite;
+}
+
+.border-box {
+  border-image: url(https://sunflower-land.com/game-assets/ui/panel/dark_border.png) 20% / 1 / 0 stretch;
+  border-style: solid;
+  border-width: 5.25px;
+  image-rendering: pixelated;
+  border-radius: 13.125px;
+  padding: 2.625px;
+}
+
+.animal-move {
+  animation: moveNatural 2s infinite ease-in-out;
+}
+.shake {
+  animation: shake 0.5s;
+  animation-iteration-count: 3;
+}
+
+.animal {
+  animation: animalBreath 0.4s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+@keyframes animalBreath {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02); /* Phồng nhẹ */
+  }
+}
+
+@keyframes animalWiggle {
+  0%,
+  100% {
+    left: 0;
+  }
+  50% {
+    left: 5px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes moveNatural {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(3px, -5px);
+  }
+  50% {
+    transform: translate(5px, 0);
+  }
+  75% {
+    transform: translate(3px, 5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    left: -15px;
+  }
+  50% {
+    left: -20px;
+  }
+}
+@keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(180deg);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+@keyframes bounceCard {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1rem);
+  }
+}
+@keyframes animalBounce {
+  0%,
+  100% {
+    top: 0;
+  }
+  50% {
+    top: -2px;
+  }
+}

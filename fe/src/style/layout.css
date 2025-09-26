@@ -1,0 +1,189 @@
+.tab-bar[data-v-e697ea1f] {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 14.93333rem;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 -1rem 0.83333rem #64656614;
+  z-index: 99;
+}
+
+.tab-bar .tab-item[data-v-e697ea1f] {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.06667rem;
+  color: var(--text-color-light);
+  cursor: pointer;
+}
+
+.tab-bar .tab-item .tab-icon[data-v-e697ea1f] {
+  font-size: 6.4rem;
+  width: 1em;
+  height: 1em;
+}
+
+.tab-bar .tab-item span[data-v-e697ea1f] {
+  font-size: 3.2rem;
+}
+
+.tab-bar .tab-item.active[data-v-e697ea1f] {
+  color: var(--primary-color);
+}
+
+.tab-bar .tab-item.active span[data-v-e697ea1f] {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tab-bar .tab-item.active .tab-icon[data-v-e697ea1f] {
+  color: var(--primary-color);
+}
+
+.title[data-v-fed939fe] {
+  font-size: 6.4rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 8.83333rem;
+}
+
+.register-form[data-v-fed939fe] {
+  width: 100%;
+}
+
+.register-form .form-item[data-v-fed939fe] {
+  margin-bottom: 4.26667rem;
+}
+
+.register-form[data-v-fed939fe] .van-field {
+  border-style: solid;
+  background: white;
+  padding: 0px;
+  image-rendering: pixelated;
+  border-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJAgMAAACd/+6DAAAADFBMVEUAAADq1KomK0TkpnJgUoxyAAAAAXRSTlMAQObYZgAAABlJREFUCNdjAAGuFQwM+v8YGFTDkDFYHAQAV1UEfgVn+mwAAAAASUVORK5CYII=)
+    4 fill / 1 / 0 stretch;
+  outline: none;
+  border-width: 10px;
+}
+
+.register-form[data-v-fed939fe] .van-field .van-field__left-icon {
+  margin-right: 2.66667rem;
+  align-items: center;
+  display: flex;
+}
+
+.register-form[data-v-fed939fe] .van-field .country-code {
+  color: #3e2731;
+  font-size: 3.83333rem;
+  margin-right: 2.13333rem;
+  font-weight: 500;
+}
+
+.payment-password[data-v-fed939fe] .van-field__word-limit {
+  position: absolute;
+  right: 0.83333rem;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 0;
+  font-size: 3.2rem;
+  color: var(--text-color-light);
+}
+
+.payment-password[data-v-fed939fe] .van-field__body {
+  padding-right: 10.66667rem;
+}
+
+/* [data-v-fed939fe] .van-field {
+    background: #f8f9fa;
+    border-radius: 3.2rem;
+    padding: 3.2rem 4.26667rem
+} */
+
+[data-v-fed939fe] .van-field .van-field__left-icon {
+  margin-right: 2.66667rem;
+}
+
+[data-v-fed939fe] .van-field .van-button {
+  height: 8.83333rem;
+  padding: 0 3.2rem;
+  border: none;
+  border-radius: 4.26667rem;
+  color: var(--white);
+  background: var(--primary-gradient);
+  background-size: 100% 100%;
+  background-position: 0 0;
+  transition: background-position 0.3s ease;
+}
+
+[data-v-fed939fe] .van-field .van-button:active {
+  background-position: 100% 100%;
+}
+
+[data-v-fed939fe] .van-field .van-button--disabled {
+  opacity: 0.6;
+  background: var(--primary-gradient) !important;
+}
+
+.terms[data-v-fed939fe] {
+  margin: 6.4rem 0;
+}
+
+.terms[data-v-fed939fe] .van-checkbox__label {
+  color: var(--text-color-light);
+  font-size: 3.83333rem;
+}
+
+.terms .terms-link[data-v-fed939fe] {
+  color: var(--primary-color);
+}
+
+.submit-btn[data-v-fed939fe] {
+  margin-top: 6.4rem;
+}
+
+.submit-btn[data-v-fed939fe] .van-button {
+  /* height: 13.33333rem;
+    font-size: 4.26667rem;
+    font-weight: 500;
+    background: var(--primary-gradient);
+    background-size: 100% 100%;
+    background-position: 0 0;
+    transition: background-position .3s ease;
+    border: none */
+  font-size: 4.26667rem;
+  font-weight: 500;
+  height: 13.33333rem;
+  border-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAJCAYAAAAPU20uAAAAAXNSR0IArs4c6QAAAINJREFUGJVlj7ENwjAQRd8Zz0IDFS7SpGSHbECXaejYgB2ujBRRJEWEG0tskRaFxkaO/br/39dJJ0SOp+tGRvAqADbJ4XnLPW3HFryKJPl9v3aDw7mh7R4YoJJ5ZypTYACW8VOJ1FnA9bpOd/ajXlcAJ/GLCzAVR1zwOktKcfQneJ0Bfh7qLQl8K/+KAAAAAElFTkSuQmCC);
+  border-style: solid;
+  border-width: 8px 8px 10px 8px;
+  border-image-slice: 3 3 4 3 fill;
+  -ms-interpolation-mode: nearest-neighbor;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
+  color: #fff;
+  padding: 0 18px 3px;
+  display: inline;
+  font-size: 16px;
+  line-height: 27px;
+  text-align: center;
+  text-shadow: 0px 1.5px #733e39;
+}
+
+.submit-btn[data-v-fed939fe] .van-button:active {
+  background-position: 100% 100%;
+}
+
+@media (min-width: 678px) {
+  .tab-bar {
+    max-width: 100rem;
+    margin: auto;
+  }
+}

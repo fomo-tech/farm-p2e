@@ -1,0 +1,126 @@
+.reward-fist .ant-modal-content {
+  background-color: unset;
+  box-shadow: unset;
+  background: url("../assets/img_custom/game_caravan_bg_dialog_start.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 400px;
+  position: relative;
+}
+.ant-popover {
+  font-family: "PixeloidSans", sans-serif !important;
+}
+.popover-custom {
+  font-family: "PixeloidSans", sans-serif !important;
+}
+.ant-progress .ant-progress-bg {
+  height: 13px !important;
+}
+.bg_custom_drawer.ant-drawer-content {
+  background: url("../assets/img_custom/color_launcher_bg.png") !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center;
+}
+.ant-notification {
+  z-index: 9999999 !important;
+  font-family: "PixeloidSans", sans-serif !important;
+}
+.custom_chat .ant-drawer-body {
+  padding: 0rem !important;
+}
+.ant-drawer-body {
+  padding: 2rem !important;
+}
+.ant-modal,
+.ant-drawer {
+  font-family: "PixeloidSans", sans-serif;
+}
+
+.ant-drawer-header {
+  border-bottom: none !important;
+}
+
+.ant-drawer-body::-webkit-scrollbar {
+  display: none;
+}
+.ant-drawer-content-wrapper {
+  box-shadow: unset !important;
+}
+.modal-base-custom .ant-modal-content {
+  background-color: transparent !important;
+  background-clip: unset !important;
+  box-shadow: unset !important;
+  border-radius: 0 !important;
+  position: relative;
+}
+
+.modal-base-custom .ant-modal-body {
+  position: relative;
+}
+.ant-drawer-content.modal-confirm-buy {
+  border-top-left-radius: 4.26667rem;
+  border-top-right-radius: 4.26667rem;
+  box-shadow: none !important;
+}
+
+.ant-tabs-tab-btn {
+  color: #673832 !important;
+  font-size: 15px;
+}
+.ant-tabs .ant-tabs-ink-bar {
+  background: #673832;
+}
+
+.ant-tabs-top > .ant-tabs-nav::before {
+  border-bottom: none;
+}
+.ant-notification-notice-wrapper {
+  background: none !important;
+  box-shadow: none !important;
+  border-style: solid;
+  padding: 0px;
+  image-rendering: pixelated;
+  border-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJAgMAAACd/+6DAAAADFBMVEUAAADq1KomK0TkpnJgUoxyAAAAAXRSTlMAQObYZgAAABlJREFUCNdjAAGuFQwM+v8YGFTDkDFYHAQAV1UEfgVn+mwAAAAASUVORK5CYII=)
+    4 fill / 1 / 0 stretch;
+  outline: none;
+  border-width: 10px;
+}
+.draw-winner .ant-modal-content {
+  background: unset;
+}
+
+.tab-record .ant-tabs-nav-wrap .ant-tabs-nav-list {
+  width: 100%;
+  justify-content: center;
+  gap: 8rem;
+}
+
+.tab-record .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #000;
+  font-weight: 700;
+}
+
+.tab-record .ant-tabs-ink-bar {
+  background: var(--primary-gradient);
+}
+
+.pop-up-welcome .ant-modal-content {
+  padding: 0;
+  border-radius: 12rem;
+  background-color: transparent;
+}
+
+.pop-up-welcome .ant-modal-body {
+  background: transparent;
+}
+
+.pop-up-welcome .ant-modal-close {
+  top: 10rem;
+  color: #000;
+}
+.modal_winner .ant-modal-content {
+  background-color: unset;
+  box-shadow: unset;
+}

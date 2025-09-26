@@ -1,0 +1,91 @@
+.records-list[data-v-08b1e8b3] {
+  padding: 3.2rem;
+  min-height: 100vh;
+}
+
+.records-list .record-item[data-v-08b1e8b3] {
+  background: #fff;
+  border-radius: 3.2rem;
+  padding: 4.26667rem;
+  margin-bottom: 3.2rem;
+  box-shadow: 0 0.83333rem 3.2rem #64656614;
+}
+
+.records-list .record-item .record-main[data-v-08b1e8b3] {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 3.2rem;
+}
+
+.records-list .record-item .record-left[data-v-08b1e8b3] {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.13333rem;
+}
+
+.records-list .record-item .record-left .record-time[data-v-08b1e8b3] {
+  font-size: 3.83333rem;
+  color: var(--text-color);
+  text-align: left;
+}
+
+.records-list .record-item .record-left .record-balance[data-v-08b1e8b3] {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.06667rem;
+}
+
+.records-list .record-item .record-left .record-balance .label[data-v-08b1e8b3] {
+  font-size: 3.2rem;
+  color: var(--text-color-light);
+}
+
+.records-list .record-item .record-left .record-balance .value[data-v-08b1e8b3] {
+  font-size: 3.83333rem;
+  color: var(--text-color);
+  font-family:
+    Barlow,
+    DM Mono,
+    Monaco,
+    monospace;
+}
+
+.records-list .record-item .record-left .record-balance .currency[data-v-08b1e8b3] {
+  font-size: 3.2rem;
+  color: var(--text-color-light);
+}
+
+.records-list .record-item .record-right[data-v-08b1e8b3] {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2.13333rem;
+  flex: 1;
+}
+
+.records-list .record-item .record-right .record-amount .amount[data-v-08b1e8b3] {
+  font-size: 4.26667rem;
+  font-weight: 900;
+  color: var(--text-color);
+}
+
+.records-list .record-item .record-right .record-amount .currency[data-v-08b1e8b3] {
+  font-size: 3.2rem;
+  color: var(--text-color-light);
+  margin-left: 1.06667rem;
+}
+
+.records-list .record-item .record-right .record-amount.income .amount[data-v-08b1e8b3] {
+  color: #07c160;
+}
+
+.records-list .record-item .record-right .record-reason[data-v-08b1e8b3] {
+  font-size: 2.2rem;
+  color: var(--text-color-light);
+  padding: 0.83333rem 2.13333rem;
+  background: var(--bg-color);
+  border-radius: 2.66667rem;
+}

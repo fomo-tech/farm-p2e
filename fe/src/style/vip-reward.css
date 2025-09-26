@@ -1,0 +1,215 @@
+.salary-page[data-v-0c054b6c] {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f8f9fe, #f0f3fa);
+  padding-bottom: 21.33333rem;
+}
+
+.current-level[data-v-0c054b6c] {
+  /* margin: 3.2rem;
+  */
+  padding: 4.26667rem;
+  /* background: url("../assets/images/me_advertising.png"); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 3.2rem;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1.06667rem 4.26667rem #1989fa33;
+}
+
+.current-level .level-info[data-v-0c054b6c] {
+  display: flex;
+  flex-direction: column;
+  gap: 0.83333rem;
+}
+
+.current-level .level-info .label[data-v-0c054b6c] {
+  font-size: 3.46667rem;
+  opacity: 0.9;
+}
+
+.current-level .level-info .value[data-v-0c054b6c] {
+  font-size: 5.33333rem;
+  font-weight: 600;
+}
+
+.current-level .level-icon .van-icon[data-v-0c054b6c] {
+  font-size: 6.4rem;
+}
+
+/* .salary-list[data-v-0c054b6c] {
+    padding: 3.2rem
+} */
+
+.salary-item[data-v-0c054b6c] {
+  margin-bottom: 2.66667rem;
+  border-radius: 3.2rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.salary-item .item-content[data-v-0c054b6c] {
+  background: #f5f5f5;
+  padding: 3.2rem;
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+  position: relative;
+  box-shadow: 0 0.83333rem 2.13333rem #2021230f;
+}
+
+.salary-item.active .item-content[data-v-0c054b6c] {
+  background: linear-gradient(to right, #fff, #f8f9fe);
+}
+
+.salary-item.active .level-badge[data-v-0c054b6c] {
+  background: linear-gradient(135deg, #07c160, #10b981);
+}
+
+.salary-item.current[data-v-0c054b6c] {
+  transform: scale(1.01);
+}
+
+.salary-item.current .item-content[data-v-0c054b6c] {
+  background: linear-gradient(to right, #ffffffe6, #e6f7ff);
+  border: 1rem solid #1989fa;
+  border-radius: 3.2rem;
+}
+
+.salary-item .level-badge[data-v-0c054b6c] {
+  width: 11.83333rem;
+  height: 11.83333rem;
+  background: linear-gradient(135deg, #909399, #606266);
+  border-radius: 5.86667rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0.83333rem 2.13333rem #00000014;
+}
+
+.salary-item .level-badge .badge-text[data-v-0c054b6c] {
+  color: #f5f5f5;
+  font-size: 3.2rem;
+  font-weight: 600;
+}
+
+.salary-item .salary-info[data-v-0c054b6c] {
+  flex: 1;
+}
+
+.salary-item .salary-info .amount[data-v-0c054b6c] {
+  display: flex;
+  align-items: baseline;
+  gap: 0.83333rem;
+  justify-content: center;
+  margin-bottom: 1.06667rem;
+}
+
+.salary-item .salary-info .amount .currency[data-v-0c054b6c] {
+  font-size: 3.83333rem;
+  color: #ff8c1a;
+}
+
+.salary-item .salary-info .amount .value[data-v-0c054b6c] {
+  font-size: 4.8rem;
+  font-weight: 600;
+  color: #ff8c1a;
+}
+
+.salary-item .salary-info .amount .unit[data-v-0c054b6c] {
+  font-size: 3.2rem;
+  color: var(--text-color-light);
+  margin-left: 1.06667rem;
+}
+
+.salary-item .status[data-v-0c054b6c] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.06667rem;
+}
+
+.salary-item .status .van-icon[data-v-0c054b6c] {
+  font-size: 3.83333rem;
+}
+
+.salary-item .status .van-icon.icon-unlock[data-v-0c054b6c] {
+  color: #07c160;
+}
+
+.salary-item .status .van-icon.icon-lock[data-v-0c054b6c] {
+  color: #909399;
+}
+
+.salary-item .status .status-text[data-v-0c054b6c] {
+  font-size: 3.2rem;
+  color: var(--text-color-light);
+}
+
+.salary-item .progress-bar[data-v-0c054b6c] {
+  background: #fff;
+  padding: 2.13333rem 3.2rem;
+  border-bottom-left-radius: 3.2rem;
+  border-bottom-right-radius: 3.2rem;
+}
+
+.salary-item .progress-bar .progress-info[data-v-0c054b6c] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.6rem;
+}
+
+.salary-item .progress-bar .progress-info .progress-text[data-v-0c054b6c] {
+  font-size: 3.2rem;
+  color: var(--text-color-light);
+}
+
+.salary-item .progress-bar .progress-info .progress-numbers[data-v-0c054b6c] {
+  font-size: 3.2rem;
+  color: #ff8c1a;
+}
+
+.salary-item .progress-bar .progress-track[data-v-0c054b6c] {
+  height: 1.86667rem;
+  background: #e8e8e8;
+  border-radius: 0.83333rem;
+  overflow: hidden;
+}
+
+.salary-item .progress-bar .progress-track .progress-fill[data-v-0c054b6c] {
+  height: 100%;
+  background: linear-gradient(to right, #42e168, #0dc7bd);
+  border-radius: 0.83333rem;
+  transition: width 0.3s ease;
+}
+
+.bottom-button[data-v-0c054b6c] {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 3.2rem 4.26667rem;
+  padding-bottom: calc(3.2rem + env(safe-area-inset-bottom));
+  background: #ffffffe6;
+  -webkit-backdrop-filter: blur(2.66667rem);
+  backdrop-filter: blur(2.66667rem);
+  box-shadow: 0 -0.83333rem 3.2rem #64656614;
+}
+
+.bottom-button[data-v-0c054b6c] .van-button {
+  height: 11.83333rem;
+  border: none;
+  font-weight: 600;
+  font-size: 4rem;
+  border-radius: 5.86667rem;
+  background: linear-gradient(135deg, #ff8c1a, #ff6b6b);
+  box-shadow: 0 1.06667rem 3.2rem #ff8c1a33;
+}
+
+.bottom-button[data-v-0c054b6c] .van-button:active {
+  transform: translateY(1rem);
+}

@@ -1,0 +1,184 @@
+import { socket } from "lib/socket";
+import React, { useEffect, useRef, useState } from "react";
+import { useAuthApp } from "store/useAuthApp";
+
+interface Message {
+  content: string;
+  sender: string;
+}
+
+const BoxChat: React.FC = () => {
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [input, setInput] = useState("");
+  const chatRef = useRef<HTMLDivElement | null>(null);
+  const { user } = useAuthApp();
+
+  // Scroll xuống cuối khi messages thay đổi
+  useEffect(() => {
+    if (chatRef.current) {
+      chatRef.current.scrollTop = chatRef.current.scrollHeight;
+    }
+  }, [messages]);
+
+  // Lắng nghe tin nhắn mới
+  useEffect(() => {
+    socket.on("newMessage", (msg: Message) => {
+      setMessages((prev) => [...prev, msg]);
+    });
+
+    socket.on("loadOldMessages", (msgs: Message[]) => {
+      setMessages(msgs);
+    });
+
+    return () => {
+      socket.off("newMessage");
+      socket.off("loadOldMessages");
+    };
+  }, []);
+
+  // Gửi tin nhắn
+  const handleSend = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim()) return;
+    if (!user || !user._id) {
+      alert("Bạn cần đăng nhập để gửi tin nhắn");
+      return;
+    }
+
+    const newMsg: Message = {
+      content: input.trim(),
+      sender: user._id, // chắc chắn có sender
+    };
+
+    socket.emit("sendMessage", newMsg);
+
+    // Thêm tin nhắn local cho UX nhanh
+    // setMessages((prev) => [...prev, newMsg]);
+    setInput("");
+  };
+  console.log('====================================');
+  console.log(messages);
+  console.log('====================================');
+  return (
+    <section className="msger" style={{ maxWidth: 480, margin: "auto" }}>
+      <main
+        className="msger-chat"
+        ref={chatRef}
+        style={{
+          height: 400,
+          overflowY: "auto",
+          border: "1px solid #ccc",
+          padding: "10px",
+          backgroundColor: "#f4f7f9",
+          borderRadius: "8px",
+          marginBottom: "10px",
+        }}
+      >
+        {messages.map(({ sender, content }, idx) => {
+          const isYou = sender === user?._id; // So sánh với user._id
+          return (
+            <div
+              key={idx}
+              className={`msg ${isYou ? "right-msg" : "left-msg"}`}
+              style={{
+                display: "flex",
+                justifyContent: isYou ? "flex-end" : "flex-start",
+                marginBottom: 12,
+              }}
+            >
+              {!isYou && (
+                <div
+                  className="msg-img"
+                  style={{
+                    backgroundImage:
+                      "url(https://image.flaticon.com/icons/svg/327/327779.svg)",
+                    width: 40,
+                    height: 40,
+                    borderRadius: "50%",
+                    backgroundSize: "cover",
+                    marginRight: 10,
+                  }}
+                />
+              )}
+              <div
+                className="msg-bubble"
+                style={{
+                  backgroundColor: isYou ? "#DCF8C6" : "#fff",
+                  padding: "10px",
+                  borderRadius: "10px",
+                  maxWidth: "70%",
+                }}
+              >
+                <div
+                  className="msg-info"
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    marginBottom: 6,
+                    fontSize: 12,
+                    color: "#999",
+                  }}
+                >
+                  <div className="msg-info-name">{isYou ? "You" : sender}</div>
+                </div>
+                <div className="msg-text" style={{ fontSize: 14 }}>
+                  {content}
+                </div>
+              </div>
+              {isYou && (
+                <div
+                  className="msg-img"
+                  style={{
+                    backgroundImage:
+                      "url(https://image.flaticon.com/icons/svg/145/145867.svg)",
+                    width: 40,
+                    height: 40,
+                    borderRadius: "50%",
+                    backgroundSize: "cover",
+                    marginLeft: 10,
+                  }}
+                />
+              )}
+            </div>
+          );
+        })}
+      </main>
+
+      <form
+        className="msger-inputarea"
+        onSubmit={handleSend}
+        style={{ display: "flex" }}
+      >
+        <input
+          type="text"
+          className="msger-input"
+          placeholder="Enter your message..."
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          style={{
+            flex: 1,
+            padding: 10,
+            fontSize: 16,
+            borderRadius: 4,
+            border: "1px solid #ccc",
+          }}
+        />
+        <button
+          type="submit"
+          className="msger-send-btn"
+          style={{
+            padding: "0 20px",
+            fontSize: 16,
+            cursor: "pointer",
+            borderRadius: 4,
+            marginLeft: 10,
+          }}
+        >
+          Send
+        </button>
+      </form>
+    </section>
+  );
+};
+
+export default BoxChat;

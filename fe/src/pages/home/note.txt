@@ -1,0 +1,56 @@
+     
+
+
+                           <Marquee className='text-[14rem]' gradient={false} pauseOnHover speed={40} delay={1} >
+                            {
+                                i18n?.language === 'vi' && <div>
+                                    <span className='font-[900] text-red-600'>
+                                        &nbsp;   &nbsp;  &nbsp;   &nbsp; &nbsp; Thông báo:&nbsp; 
+                                    </span>
+                                    Từ ngày 3/5, nền tảng Duck Earning sẽ không hỗ trợ thanh toán qua ngân hàng. Chỉ áp dụng thanh toán qua Crypto trên mạng BSC.
+
+                                    Mọi người vui lòng rút hết tiền nếu chưa có ví trước ngày 3/5. Xin chân thành cảm ơn! 😘😘😘
+                                </div>
+                            }
+                            {
+                                i18n?.language === 'en' && <div>
+                                    <span className='font-[900] text-red-600'>
+                                        &nbsp;   &nbsp;  &nbsp;   &nbsp; &nbsp;  Announcement: &nbsp;
+                                    </span>Starting from May 3rd, Duck Earning platform will no longer support bank payments. Payments will only be accepted via Crypto on the BSC network.
+
+                                    Please make sure to withdraw all your funds if you do not have a wallet before May 3rd. Thank you! 😘😘😘
+                                </div>
+                            }
+                            {
+                                i18n?.language === 'zh' && <div>
+                                    <span className='font-[900] text-red-600'>
+                                        &nbsp;   &nbsp;  &nbsp;   &nbsp; &nbsp; Announcement:&nbsp;
+                                    </span> 从5月3日起，Duck Earning平台将不再支持银行支付，仅支持通过BSC网络进行加密货币支付。
+
+如果您没有钱包，请在5月3日之前提取所有资金。感谢您的支持！😘😘😘
+                                </div>
+                            }
+                        </Marquee>
+
+
+                                                {/* <Swiper autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
+                            modules={[Autoplay]}
+                            direction='vertical'
+                            loop={true}
+                            slidesPerView={1}
+                            style={{
+                                height: "50rem"
+                            }}
+                        >
+                            {generateRandomObjects(10).map((item) => (
+                                <SwiperSlide key={item.id} style={{
+                                    height: "50rem"
+                                }}>
+                                    <div className='h-full w-full flex
+                                    items-center'>ID: {item.id} {item.type} {item.amount}</div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper> */}

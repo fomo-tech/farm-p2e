@@ -1,0 +1,91 @@
+  <div data-v-0d43561f="" className="activity-card" onClick={() => navigate('/treasure')}>
+                <div data-v-0d43561f="" className="card-header">
+                    <div data-v-0d43561f="" className="tag ongoing">
+                        {t("Liên tục")}
+                    </div>
+                    <div data-v-0d43561f="" className="time">
+                        {t("Hoạt động")}
+                    </div>
+                </div>
+                <div data-v-0d43561f="" className="card-body">
+                    <div data-v-0d43561f="" className="activity-info">
+                        <div data-v-0d43561f="" className="title">
+                            {t("Đi tìm kho báu")}
+                        </div>
+                        <div data-v-0d43561f="" className="desc">
+                            {t("Tham gia truy tìm những phần quà hấp dẫn")}
+                        </div>
+                        <div data-v-0d43561f="" className="rewards flex items-center">
+                            <span data-v-0d43561f="" className="amount">
+                                +1
+                            </span>
+                            <div data-v-0d43561f="" className="reward-item">
+                                <img src={rw3} width={30}/>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div data-v-0d43561f="" className="activity-cover">
+                        <div data-v-0d43561f="" className="van-image">
+                            <img
+                                src={activity3}
+                                className="van-image__img w-full h-full object-cover"
+                            />
+                            {/**/}
+                            {/**/}
+                        </div>
+                    </div>
+                </div>
+                <div data-v-0d43561f="" className="card-footer">
+                    <div data-v-0d43561f="" className="action-btn">
+                        {t("Chơi ngay")}
+                    </div>
+                </div>
+            </div>
+
+            <div data-v-0d43561f="" className="activity-card" onClick={() => navigate('/lucky-draw')}>
+                <div data-v-0d43561f="" className="card-header">
+                    <div data-v-0d43561f="" className="tag ongoing">
+                        {t("Liên tục")}
+                    </div>
+                    <div data-v-0d43561f="" className="time">
+                        {t("Hoạt động")}
+                    </div>
+                </div>
+                <div data-v-0d43561f="" className="card-body">
+                    <div data-v-0d43561f="" className="activity-info">
+                        <div data-v-0d43561f="" className="title">
+                            {t("Vòng xoay may mắn")}
+                        </div>
+                        <div data-v-0d43561f="" className="desc">
+                            {t("Tham gia vòng xoay may mắn để kiếm thêm lợi nhuận")}
+                        </div>
+                        <div data-v-0d43561f="" className="rewards">
+                            <div data-v-0d43561f="" className="reward-item">
+                                <span data-v-0d43561f="" className="amount">
+                                    + 5
+                                </span>
+                                <span data-v-0d43561f="" className="unit">
+                                     USD
+                                </span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div data-v-0d43561f="" className="activity-cover">
+                        <div data-v-0d43561f="" className="van-image">
+                            <img
+                                src={luckydraw}
+                                className="van-image__img w-full h-full object-cover"
+                            />
+                            {/**/}
+                            {/**/}
+                        </div>
+                    </div>
+                </div>
+                <div data-v-0d43561f="" className="card-footer">
+                    <div data-v-0d43561f="" className="action-btn">
+                        {t("Chơi ngay")}
+                    </div>
+                </div>
+            </div>

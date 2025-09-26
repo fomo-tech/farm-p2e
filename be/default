@@ -1,0 +1,2151 @@
+server {
+
+
+    root /var/www/html/fake/clone/;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name nhathuoclongchaufpt.info;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+  }
+
+
+   
+
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/nhathuoclongchaufpt.info/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/nhathuoclongchaufpt.info/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+
+
+
+##############FARM INVEST############
+
+
+server {
+
+
+    root /var/www/farm-invest/fe/build/;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name www.rich-farmer.online;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+  }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/www.rich-farmer.online/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/www.rich-farmer.online/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+server {
+
+
+    root /var/www/farm-invest/fe/dist/;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name admin.rich-farmer.online;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+  }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/admin.rich-farmer.online/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/admin.rich-farmer.online/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+server {
+    server_name api.rich-farmer.online;
+ 
+    location / {
+        proxy_pass http://localhost:2025;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+
+
+#########APPP########
+
+
+server {
+
+
+    root /var/www/farm-invest/fe/build/;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name rich-farmer.online;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+  }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/rich-farmer.online/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/rich-farmer.online/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+#lisboard
+
+server {
+
+
+    root /var/www/app/lisboard-xoso/fe/build;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name lisboard.h5-vietlottly.top;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+  }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/lisboard.h5-vietlottly.top/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/lisboard.h5-vietlottly.top/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+
+server {
+    server_name api.h5-vietlottly.top;
+
+    location / {
+        proxy_pass http://localhost:5003;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/api.h5-vietlottly.top/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/api.h5-vietlottly.top/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+
+#demo invest 7/5
+
+server {
+    server_name demo-api.godenblook.com;
+
+    location / {
+        proxy_pass http://localhost:4003;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/demo-api.godenblook.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/demo-api.godenblook.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+
+#app  vinfast 
+
+
+
+server {
+
+
+    root /var/www/app-invest-vinfast/fe/dist;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name admin.vinnfastcapitalgroup.com;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+  }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/admin.vinnfastcapitalgroup.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/admin.vinnfastcapitalgroup.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+server {
+
+
+    root /var/www/app-invest-vinfast/fe/build;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name vinnfastcapitalgroup.com;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+  }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/vinnfastcapitalgroup.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/vinnfastcapitalgroup.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+}
+
+server {
+    server_name api.vinnfastcapitalgroup.com;
+
+    location / {
+        proxy_pass http://localhost:4004;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/api.vinnfastcapitalgroup.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/api.vinnfastcapitalgroup.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+
+#vietlot xosso
+
+server {
+    server_name demo13-api.speedcode.online;
+
+    location / {
+        proxy_pass http://localhost:5008;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/demo13-api.speedcode.online/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/demo13-api.speedcode.online/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+
+
+    root /var/www/app/vietlot-bet-2/fe/dist;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name  demo13-admin.speedcode.online;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+        try_files $uri $uri/ /index.html =404;
+  }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/demo13-admin.speedcode.online/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/demo13-admin.speedcode.online/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+server {
+
+
+    root /var/www/app/vietlot-bet-2/fe/build;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name  demo13.speedcode.online;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+        try_files $uri $uri/ /index.html =404;
+  }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/demo13.speedcode.online/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/demo13.speedcode.online/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+
+
+    root /var/www/app/vietlot-bet-2/fe/dist;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name  admin.vietlotty8.com;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+        try_files $uri $uri/ /index.html =404;
+  }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/admin.vietlotty8.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/admin.vietlotty8.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+server {
+
+
+    root /var/www/app/vietlot-bet-2/fe/build;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name 121;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+        try_files $uri $uri/ /index.html =404;
+  }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/vietlotty8.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/vietlotty8.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+
+
+    root /var/www/app/vietlot-bet/fe/dist;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name demo12.lisboacasino.top admin.h5-vietlotly.com admin.h5-vietlottly.com;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+  }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/admin.h5-vietlottly.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/admin.h5-vietlottly.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+
+}
+
+server {
+
+
+    root /var/www/app/vietlot-bet/fe/build;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name  h5-vietlottly.com;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+  }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/h5-vietlottly.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/h5-vietlottly.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+    if ($host = demo12.speedcode.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+
+    root /var/www/app/vietlot-bet/fe/build;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name demo12.speedcode.online;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+  }
+
+
+}
+server {
+
+
+    root /var/www/app/vietlot-bet/fe/build;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name  h5-vietlottly.net;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+  }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/h5-vietlottly.net/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/h5-vietlottly.net/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+
+
+    root /var/www/app/vietlot-bet/fe/build;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name  h5-vietlottly.top ;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+  }
+
+location /mobile/ {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+  }
+
+  
+
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/h5-vietlottly.top/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/h5-vietlottly.top/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+server {
+    server_name api-vietlot.lisboacasino.top;
+
+    location / {
+        proxy_pass http://localhost:5001;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/api-vietlot.lisboacasino.top/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/api-vietlot.lisboacasino.top/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+#may bay
+
+
+
+server {
+    server_name demo11.speedcode.online;
+    root /var/www/app/may-bay;
+    index index.php index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        include fastcgi_params;
+        fastcgi_pass unix:/run/php/php8.3-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi.conf;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/demo11.speedcode.online/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/demo11.speedcode.online/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+
+
+server {
+
+
+    root /var/www/app/lisboard-xoso/fe/dist;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name admin.lisboacasino.top;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+}
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/admin.lisboacasino.top/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/admin.lisboacasino.top/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+
+
+    root /var/www/app/lisboard-xoso/fe/build;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name lisboacasino.top;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+}
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/lisboacasino.top/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/lisboacasino.top/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+
+
+server {
+    server_name demo.tiktokshopsw.com;
+
+    location / {
+        proxy_pass http://localhost:7171;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/demo.tiktokshopsw.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/demo.tiktokshopsw.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+
+
+
+#demo9
+
+
+server {
+    if ($host = demo10.speedcode.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name demo9.speedcode.online;
+    root /var/www/app/z-mex-mining-v2;
+    index index.php index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        include fastcgi_params;
+        fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi.conf;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/demo9.speedcode.online/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/demo9.speedcode.online/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+#clone bitget
+
+server {
+root /var/www/app/bitget-clone/fe/build;   
+
+ server_name demo10.speedcode.online;
+
+   location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+
+    }
+
+    location /api/ {
+        proxy_pass http://localhost:5755;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/demo10.speedcode.online/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/demo10.speedcode.online/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+}
+
+server {
+root /var/www/app/bitget-clone/fe/ic-fe/build;
+
+ server_name icmarket.me;
+
+   location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/icmarket.me/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/icmarket.me/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+root /var/www/app/bitget-clone/fe/dist;
+
+ server_name admin.kunadap.online;
+
+   location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/admin.kunadap.online/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/admin.kunadap.online/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+root /var/www/app/bitget-clone/fe/dist;
+
+ server_name admin.icmarket.me ;
+
+   location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/admin.icmarket.me/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/admin.icmarket.me/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+#quay don work
+
+
+
+
+server {
+    server_name api.tiktokshopsw.com ;
+
+    location / {
+        proxy_pass http://localhost:1001;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/api.tiktokshopsw.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/api.tiktokshopsw.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+
+
+    root /var/www/app-work/quay-don/fe/build;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name tiktokshopsw.com;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/tiktokshopsw.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/tiktokshopsw.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+
+
+    root /var/www/app-work/quay-don/fe/dist;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name admin.tiktokshopsw.com;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/admin.tiktokshopsw.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/admin.tiktokshopsw.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+#quaydon1
+
+server {
+
+
+    root /var/www/app/quay-don1/fe/build;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name _demo9.speedcode.online;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+
+    }
+
+
+
+
+}
+
+server {
+
+
+    root /var/www/app/quay-don1/fe/dist;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name admin.libre-stores.site;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+
+    }
+
+
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/admin.libre-stores.site/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/admin.libre-stores.site/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+server {
+    server_name api.libre-stores.site;
+
+    location / {
+        proxy_pass http://localhost:1000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/api.libre-stores.site/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/api.libre-stores.site/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+
+
+
+
+### vietlott
+
+server {
+    server_name demo8.speedcode.online;
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/demo8.speedcode.online/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/demo8.speedcode.online/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+
+#### xaxino
+
+server {
+    server_name demo7.speedcode.online;
+    root /var/www/app/XaxinoV3.1/;
+    index index.php index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        include fastcgi_params;
+        fastcgi_pass unix:/run/php/php8.3-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi.conf;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+
+    #listen 443 ssl; # managed by Certbot
+   # ssl_certificate /etc/letsencrypt/live/demo6.speedcode.online/fullchain.pem; # managed by Certbot
+   # ssl_certificate_key /etc/letsencrypt/live/demo6.speedcode.online/privkey.pem; # managed by Certbot
+  # include /etc/letsencrypt/options-ssl-nginx.conf; # managed b
+
+
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/demo7.speedcode.online/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/demo7.speedcode.online/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+
+
+
+#tradebot 
+
+
+#cow
+
+server {
+    server_name demo6.speedcode.online;
+    root /var/www/app/tradebot;
+    index index.php index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        include fastcgi_params;
+        fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi.conf;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/demo6.speedcode.online/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/demo6.speedcode.online/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+
+#cow
+
+server {
+    server_name demo5.speedcode.online;
+    root /var/www/app/cow/;
+    index index.php index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        include fastcgi_params;
+        fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi.conf;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/demo5.speedcode.online/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/demo5.speedcode.online/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+#bo
+
+server {
+    server_name socket-demo4.speedcode.online;
+
+    location / {
+        proxy_pass http://localhost:3004;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/socket-demo4.speedcode.online/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/socket-demo4.speedcode.online/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+server {
+    server_name demo4.speedcode.online;
+    root /var/www/app/bo/public;
+    index index.php index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        include fastcgi_params;
+        fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi.conf;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/demo4.speedcode.online/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/demo4.speedcode.online/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+
+
+#appvay
+
+
+server {
+    server_name dangkykhoanvay.com;
+
+    location / {
+        proxy_pass http://localhost:5002;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/dangkykhoanvay.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/dangkykhoanvay.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+
+
+    root /var/www/app/vay/src/admin/build/;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name admin.dangkykhoanvay.com;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/admin.dangkykhoanvay.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/admin.dangkykhoanvay.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+   
+
+    root /var/www/app/vay/src/admin/build/;
+
+    # Add index.php to the list if you are using PHP
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name demo1-admin.speedcode.online;
+
+    location / {
+
+        # First attempt to serve request as file, then
+
+        # as directory, then fall back to displaying a 404.
+
+        try_files $uri $uri/ /index.html =404;
+
+    }
+
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/demo1-admin.speedcode.online/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/demo1-admin.speedcode.online/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+
+server {
+    server_name demo1.speedcode.online;
+
+    location / {
+        proxy_pass http://localhost:5002;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/demo1.speedcode.online/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/demo1.speedcode.online/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+#soxo
+
+
+server {
+    server_name demo2.speedcode.online;
+
+    location / {
+        proxy_pass http://localhost:3002;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/demo2.speedcode.online/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/demo2.speedcode.online/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+server {
+    server_name demo2-api.speedcode.online;
+
+    location / {
+        proxy_pass http://localhost:8082;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/demo2-api.speedcode.online/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/demo2-api.speedcode.online/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+server {
+    if ($host = demo2-api.speedcode.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name demo2-api.speedcode.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+
+server {
+    if ($host = demo2.speedcode.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name demo2.speedcode.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+server {
+    if ($host = demo1.speedcode.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name demo1.speedcode.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+
+server {
+    if ($host = demo1-admin.speedcode.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name demo1-admin.speedcode.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+server {
+    if ($host = demo4.speedcode.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80;
+    server_name demo4.speedcode.online;
+    return 404; # managed by Certbot
+
+
+}
+
+
+server {
+    if ($host = socket-demo4.speedcode.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name socket-demo4.speedcode.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+server {
+    if ($host = demo5.speedcode.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name demo5.speedcode.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+server {
+    if ($host = demo6.speedcode.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name demo6.speedcode.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+server {
+    if ($host = demo7.speedcode.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name demo7.speedcode.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+server {
+    if ($host = demo8.speedcode.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name demo8.speedcode.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+server {
+    if ($host = api.libre-stores.site) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name api.libre-stores.site;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+server {
+    if ($host = admin.libre-stores.site) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name admin.libre-stores.site;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+server {
+    if ($host = demo9.speedcode.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name demo9.speedcode.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+server {
+    if ($host = api.tiktokshopsw.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name api.tiktokshopsw.com ;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+server {
+    if ($host = admin.tiktokshopsw.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name admin.tiktokshopsw.com;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+server {
+    if ($host = tiktokshopsw.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name tiktokshopsw.com;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+server {
+    if ($host = demo10.speedcode.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name demo10.speedcode.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+
+server {
+    if ($host = admin.kunadap.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+ server_name admin.kunadap.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+
+server {
+    if ($host = duck-earning.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name duck-earning.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+
+
+server {
+    if ($host = admin.duck-earning.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name admin.duck-earning.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+server {
+    if ($host = demo.tiktokshopsw.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name demo.tiktokshopsw.com;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+server {
+    if ($host = lisboacasino.top) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name lisboacasino.top;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+server {
+    if ($host = admin.lisboacasino.top) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name admin.lisboacasino.top;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+
+
+server {
+    if ($host = demo11.speedcode.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name demo11.speedcode.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+server {
+    if ($host = api-vietlot.lisboacasino.top) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name api-vietlot.lisboacasino.top;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+
+server {
+    if ($host = api.duck-earning.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name api.duck-earning.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+
+server {
+    if ($host = demo.congtytnhhgiaohangtietkiem.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name demo.congtytnhhgiaohangtietkiem.com;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+server {
+    if ($host = demo12.lisboacasino.top) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name demo12.lisboacasino.top;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+
+server {
+    if ($host = h5-vietlottly.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name  h5-vietlottly.com;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+server {
+    if ($host = demo-api.godenblook.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name demo-api.godenblook.com;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+server {
+    if ($host = api.vinnfastcapitalgroup.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name api.vinnfastcapitalgroup.com;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+
+
+server {
+    if ($host = admin.vinnfastcapitalgroup.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name admin.vinnfastcapitalgroup.com;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+
+server {
+    if ($host = h5-vietlottly.top) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name  h5-vietlottly.top ;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+server {
+    if ($host = h5-vietlottly.net) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name  h5-vietlottly.net;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+server {
+    if ($host = api.h5-vietlottly.top) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name api.h5-vietlottly.top;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+server {
+    if ($host = lisboard.h5-vietlottly.top) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name lisboard.h5-vietlottly.top;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+
+server {
+    if ($host = dangkykhoanvay.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name dangkykhoanvay.com;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+server {
+    if ($host = admin.dangkykhoanvay.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name admin.dangkykhoanvay.com;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+
+server {
+    if ($host = api.rich-farmer.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name api.rich-farmer.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+
+server {
+    if ($host = rich-farmer.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name rich-farmer.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+
+server {
+    if ($host = admin.rich-farmer.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name admin.rich-farmer.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+
+server {
+    if ($host = www.rich-farmer.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name www.rich-farmer.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+server {
+    if ($host = icmarket.me) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+ server_name icmarket.me;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+server {
+    if ($host = admin.icmarket.me) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+ server_name admin.icmarket.me ;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+server {
+    if ($host = nhacthuoclongchaufpt.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name nhacthuoclongchaufpt.com;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+server {
+    if ($host = nhathuoclongchaufpt.info) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name nhathuoclongchaufpt.info;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+
+server {
+    if ($host = demo13.speedcode.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name  demo13.speedcode.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+server {
+    if ($host = demo13-api.speedcode.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name demo13-api.speedcode.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+server {
+    if ($host = demo13-admin.speedcode.online) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name  demo13-admin.speedcode.online;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+
+
+server {
+    if ($host = vietlotty8.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name  vietlotty8.com;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+
+server {
+    if ($host = admin.vietlotty8.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name  admin.vietlotty8.com;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
