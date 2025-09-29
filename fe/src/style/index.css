@@ -93,9 +93,12 @@
   --van-line-height-sm: 4.8rem;
   --van-line-height-md: 5.33333rem;
   --van-line-height-lg: 5.86667rem;
-  --van-base-font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Segoe UI, Arial, Roboto,
-    "PingFang SC", "miui", "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
-  --van-price-font: avenir-heavy, "PingFang SC", helvetica neue, arial, sans-serif;
+  --van-base-font:
+    -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Segoe UI,
+    Arial, Roboto, "PingFang SC", "miui", "Hiragino Sans GB", "Microsoft Yahei",
+    sans-serif;
+  --van-price-font:
+    avenir-heavy, "PingFang SC", helvetica neue, arial, sans-serif;
   --van-duration-base: 0.3s;
   --van-duration-fast: 0.2s;
   --van-ease-out: ease-out;
@@ -163,7 +166,7 @@ body {
   font-family: "PixeloidSans", sans-serif !important;
 }
 
-#crisp-chatbox .cc-1m2mf {
+#crisp-chatbox .cc-1o31k {
   display: none !important;
 }
 .no-scollbar::-webkit-scrollbar {
@@ -313,7 +316,8 @@ body {
 }
 
 .border-box {
-  border-image: url(https://sunflower-land.com/game-assets/ui/panel/dark_border.png) 20% / 1 / 0 stretch;
+  border-image: url(https://sunflower-land.com/game-assets/ui/panel/dark_border.png)
+    20% / 1 / 0 stretch;
   border-style: solid;
   border-width: 5.25px;
   image-rendering: pixelated;

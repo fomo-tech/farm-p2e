@@ -26,7 +26,7 @@ import requestService from "api/request";
 import { useAuthApp } from "store/useAuthApp";
 import { useGlobalAppStore } from "store/useGlobalApp";
 import { getJSONFromUrl, removeLocalStoreageUser } from "lib/helpers";
-import bg from "assets/img_custom/launch_image_bg.png";
+import bg from "assets/images/_bf.jpeg";
 
 // Định nghĩa danh sách route
 const routeList: RouteObject[] = [
@@ -44,11 +44,18 @@ const routeList: RouteObject[] = [
   },
   {
     path: "/terms-and-privacy",
-    element: <WrapperRouteComponent element={<TermsAndPrivacy />} title="Terms and Privacy" />,
+    element: (
+      <WrapperRouteComponent
+        element={<TermsAndPrivacy />}
+        title="Terms and Privacy"
+      />
+    ),
   },
   {
     path: "/activity",
-    element: <WrapperRouteComponent auth element={<Activity />} title="Activity" />,
+    element: (
+      <WrapperRouteComponent auth element={<Activity />} title="Activity" />
+    ),
   },
   {
     path: "/agency",
@@ -56,19 +63,31 @@ const routeList: RouteObject[] = [
   },
   {
     path: "/lucky-draw",
-    element: <WrapperRouteComponent auth element={<LuckyWeel />} title="Lucky Draw" />,
+    element: (
+      <WrapperRouteComponent auth element={<LuckyWeel />} title="Lucky Draw" />
+    ),
   },
   {
     path: "/treasure",
-    element: <WrapperRouteComponent auth element={<Treasure />} title="Treasure" />,
+    element: (
+      <WrapperRouteComponent auth element={<Treasure />} title="Treasure" />
+    ),
   },
   {
     path: "/daily-checkin",
-    element: <WrapperRouteComponent auth element={<DailyCheckin />} title="Daily Checkin" />,
+    element: (
+      <WrapperRouteComponent
+        auth
+        element={<DailyCheckin />}
+        title="Daily Checkin"
+      />
+    ),
   },
   {
     path: "/profile",
-    element: <WrapperRouteComponent auth element={<Profile />} title="Profile" />,
+    element: (
+      <WrapperRouteComponent auth element={<Profile />} title="Profile" />
+    ),
   },
   {
     path: "/order",
@@ -85,8 +104,10 @@ const RenderRouter = () => {
   const { logged, onSetUser } = useAuthApp();
   const { isCallBackUser } = useGlobalAppStore();
 
-  const checkHiddenHeader = ROUTES_HEADER_HIDDEN.includes(pathname) || pathname.startsWith("/farm/");
-  const checkHiddenTabbar = ROUTES_TABBAR_HIDDEN.includes(pathname) || pathname.startsWith("/farm/");
+  const checkHiddenHeader =
+    ROUTES_HEADER_HIDDEN.includes(pathname) || pathname.startsWith("/farm/");
+  const checkHiddenTabbar =
+    ROUTES_TABBAR_HIDDEN.includes(pathname) || pathname.startsWith("/farm/");
 
   // Gọi API lấy profile nếu đã đăng nhập
   const getUser = useCallback(async () => {
@@ -98,9 +119,9 @@ const RenderRouter = () => {
     } catch (error: any) {
       if ([401, 403, 500].includes(error?.response?.status)) {
         removeLocalStoreageUser();
-        navigate("/login", { replace: true });
-      } else {
-        console.error("Lỗi lấy thông tin người dùng:", error);
+        if (window.location.pathname !== "/login") {
+          navigate("/login", { replace: true });
+        }
       }
     }
   }, [onSetUser, navigate]);
@@ -108,7 +129,12 @@ const RenderRouter = () => {
   // Xử lý redirect nếu chưa đăng nhập hoặc đã đăng nhập mà vào trang login/register
   useEffect(() => {
     if (!logged) {
-      const redirectPath = pathname === "/register" && r ? `/register?r=${r}` : pathname === "/register" ? "/register" : "/login";
+      const redirectPath =
+        pathname === "/register" && r
+          ? `/register?r=${r}`
+          : pathname === "/register"
+            ? "/register"
+            : "/login";
       return navigate(redirectPath);
     }
 
@@ -125,7 +151,7 @@ const RenderRouter = () => {
   }, [pathname]);
 
   return (
-    <div className="max-w-[100rem] m-auto w-full min-h-screen flex flex-col viewport-fake">
+    <div className="max-w-[100rem] m-auto w-full min-h-screen flex flex-col viewport-fake relative">
       <div className="min-h-screen bg-[#fff]">
         <div
           className="min-h-screen"
@@ -141,7 +167,8 @@ const RenderRouter = () => {
 
           <div
             className={clsx("relative", {
-              "min-h-screen": !checkHiddenHeader && !pathname.startsWith("/farm/"),
+              "min-h-screen":
+                !checkHiddenHeader && !pathname.startsWith("/farm/"),
             })}
           >
             {element}
